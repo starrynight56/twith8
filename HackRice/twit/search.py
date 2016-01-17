@@ -1,8 +1,6 @@
 __author__ = 'Nicholas'
 from flask import Flask, jsonify, render_template, request
 app = Flask(__name__)
-import codecs
-import json
 import sys
 import codecs
 sys.stdout = codecs.getwriter('utf8')(sys.stdout)
@@ -22,7 +20,6 @@ try:
      )
 
      # this is where the fun actually starts :)
-    f = codecs.open("JSONSHIT.json", mode='w', encoding="utf-8", errors='strict', buffering=1)
     #for tweet in ts.search_tweets_iterable(tso):
     #    info = ({'id' : tweet['id' ] , 'user' : tweet['user']['screen_name'] , 'text' : tweet['text']})
     #    print tweet
@@ -33,22 +30,16 @@ try:
 
 
 
-
     def get_tweets(amount):
         tweets = []
         counter = 0
         for tweet in ts.search_tweets_iterable(tso):
             if (counter < amount):
                 info = ({'id' : tweet['id' ] , 'user' : tweet['user']['screen_name'] , 'text' : tweet['text']})
-        #    return jsonify(id=tweet['id'] , user=tweet['user']['screen_name'] , text=tweet['text'])
-        #    print tweet
-        #    json.dumps(info, indent = 1, ensure_ascii=False)
                 tweets.append(info)
                 counter += 1
             else:
                 break
         return tweets
-        #return jsonify(tweets)
-
 except TwitterSearchException as e: # take care of all those ugly errors if there are some
     print(e)
