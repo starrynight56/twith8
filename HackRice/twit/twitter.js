@@ -46,6 +46,15 @@ colorTog;
 //FUNCTION 2
 //TAKES DATA OF RECENT TWEETS FROM TWITTER
 
+$('button').click($.ajax({
+   url: "/cats",
+   success: function(response){
+     //here you do whatever you want with the response variable
+     var output = response;
+     $('#t1').attr(output);
+   }
+}));
+
 //FUNCTION 3
 
 //INPUT FUNCTION, TAKES DATA FROM TWITTER AND PROVIDES DATA??
