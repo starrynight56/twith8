@@ -1,0 +1,32 @@
+<!Doctype html>
+
+<!--
+FILE NAME: foodpreferences.html
+WRITTEN BY: Rosanne Hu, Nick Alvarez, Sam Yang, and Sarah Jee
+DATE: January 2015
+PURPOSE: HackRice Project
+-->
+
+<html>
+    <head>
+        <title>Twitter Thoughts</title>
+        <link href="{{ url_for('static', filename = 'twitter.css')}}" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <meta charset = "UTF-8" />
+
+    </head>
+
+    <body>
+        <img src="{{ url_for('static', filename = 'twit.png')}}" alt=birdy>
+        <h1>Are You Ready to See What Twitter hates?</h1>
+        <button type='button' onclick="showDiv()">I'm Ready</button>
+        <div style="display:none;" class=tweet id=t1>{{tweet1}}</div>
+        <div style="display:none;"class=tweet id=t2>{{tweet2}}</div>
+        <div style="display:none;"class=tweet id=t3>{{tweet3}}</div>
+        <!--<input type='text' id= tb10></input>-->
+
+
+
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' type='text/javascript'></script>
+        <script src="{{ url_for('static', filename = 'twitter.js')}}"></script>
+    <body>

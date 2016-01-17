@@ -54,7 +54,6 @@ $('button').click($.ajax({
      $('#t1').attr(output);
    }
 }));
-
 //FUNCTION 3
 
 //INPUT FUNCTION, TAKES DATA FROM TWITTER AND PROVIDES DATA??
@@ -63,4 +62,10 @@ function inputWhat(){
     var stuff = $('#tb10').val();
 
     document.querySelector('#time').innerHTML = meal + dat;
+}
+
+function showDiv() {
+    document.getElementById('t1').style.display = "block";
+    document.getElementById('t2').style.display = "block";
+    document.getElementById('t3').style.display = "block";
 }

@@ -10,7 +10,7 @@ from TwitterSearch import *
 try:
     tso = TwitterSearchOrder() # create a TwitterSearchOrder object
     tso.set_keywords(['I hate']) # let's define all words we would like to have a look for
-    tso.set_language('en') # we want to see German tweets only
+    tso.set_language('en') # we want to see English tweets only
     tso.set_include_entities(False) # and don't give us all those entity information
 
     # it's about time to create a TwitterSearch object with our secret tokens
@@ -34,17 +34,21 @@ try:
 
 
 
-    def get_tweets():
+    def get_tweets(amount):
         tweets = []
+        counter = 0
         for tweet in ts.search_tweets_iterable(tso):
-            info = ({'id' : tweet['id' ] , 'user' : tweet['user']['screen_name'] , 'text' : tweet['text']})
+            if (counter < amount):
+                info = ({'id' : tweet['id' ] , 'user' : tweet['user']['screen_name'] , 'text' : tweet['text']})
         #    return jsonify(id=tweet['id'] , user=tweet['user']['screen_name'] , text=tweet['text'])
         #    print tweet
-            json.dumps(info, indent = 1, ensure_ascii=False)
-        #    tweets.append(info)
+        #    json.dumps(info, indent = 1, ensure_ascii=False)
+                tweets.append(info)
+                counter += 1
+            else:
+                break
+        return tweets
         #return jsonify(tweets)
 
 except TwitterSearchException as e: # take care of all those ugly errors if there are some
     print(e)
-
-get_tweets()
