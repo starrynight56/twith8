@@ -30,15 +30,19 @@ try:
     #    print(json.dumps(info))
     #    write_this = unicode( '@%s tweeted: %s' % ( tweet['user']['screen_name'], tweet['text'] ) )
     #    f.write(write_this + '\n')
+
+
+
+
     def get_tweets():
         tweets = []
         for tweet in ts.search_tweets_iterable(tso):
-        #    info = ({'id' : tweet['id' ] , 'user' : tweet['user']['screen_name'] , 'text' : tweet['text']})
-            return jsonify(id=tweet['id'] , user=tweet['user']['screen_name'] , text=tweet['text'])
+            info = ({'id' : tweet['id' ] , 'user' : tweet['user']['screen_name'] , 'text' : tweet['text']})
+        #    return jsonify(id=tweet['id'] , user=tweet['user']['screen_name'] , text=tweet['text'])
         #    print tweet
-        #    json.dumps(info, indent = 1, ensure_ascii=False)
+            json.dumps(info, indent = 1, ensure_ascii=False)
         #    tweets.append(info)
-        return jsonify(tweets)
+        #return jsonify(tweets)
 
 except TwitterSearchException as e: # take care of all those ugly errors if there are some
     print(e)
