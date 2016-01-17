@@ -23,19 +23,19 @@ function colorTog(){
     $('body').fadeto();
     //$('body').animate( { backgroundColor: hue }, 1000);
 }
-// function whiteBlue(){
-//     if (currentColor == 2){
-//         $('img').attr("src", 'blue.png');
-//     }else{
-//         $('img').attr("src", 'twit.png');
-//     }
-// }
+function whiteBlue(){
+    if (currentColor == 2){
+        $('img').attr("src", 'blue.png');
+    }else{
+        $('img').attr("src", 'twit.png');
+    }
+}
 function nextColor(){
     currentColor++;
     if( currentColor >=colors.length){
         currentColor = 0;
     }
-    // whiteBlue();
+    whiteBlue();
     colorTog();
 }
 

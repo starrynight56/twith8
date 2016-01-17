@@ -11,7 +11,7 @@ PURPOSE: Javascript for HackRice Project
 var colors = [
     "#00ACED",
     '#F04DDA',
-    '#FFFFFF',
+    '#77DD77',
     '#FE4A49',
     '#0084b4'];
 
@@ -54,13 +54,3 @@ $('button').click($.ajax({
      $('#t1').attr(output);
    }
 }));
-
-//FUNCTION 3
-
-//INPUT FUNCTION, TAKES DATA FROM TWITTER AND PROVIDES DATA??
-
-function inputWhat(){
-    var stuff = $('#tb10').val();
-
-    document.querySelector('#time').innerHTML = meal + dat;
-}

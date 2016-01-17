@@ -12,13 +12,36 @@ body {
     background-color: #F04DDA;
 }
 
-/*button {
-    text-align: center;
-    font-family:tahoma, arial, sans-serif;
-    width: 300px;
-    height: 40px;
-    border-radius: 3px;
-}*/
+
+.tweet {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 16px;
+        border-color: #1DCAFF;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 3px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        margin: 10px 5px;
+        padding: 0 16px 16px 16px;
+        max-width: 468px;
+        height:50px;
+        position: relative;
+        left:30%;
+        background-color: none;
+}
+.yeet{
+    background-color: white;
+    max-width: inherit;
+    opacity: 60%;
+}
+#t3{
+    top:50%;
+}
+
+#t2{
+    top:60%;
+}
 button {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
